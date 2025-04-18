@@ -1,1 +1,8 @@
-timepandasyfinancetextblobbs4selenium import webdriverselenium.webdriver.chrome.options import Optionsselenium.webdriver.common.by import Bystreamlitdatetimerequestslxml
+timetextblobwebdriverOptionsBydatetime
+streamlit
+pandas
+numpy
+yfinance
+beautifulsoup4
+requests
+lxml

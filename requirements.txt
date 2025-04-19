@@ -5,4 +5,7 @@ numpy
 yfinance
 beautifulsoup4
 requests
-lxml
+lxmlOpenpyxl
+Selenium
+Re
+Subprocess

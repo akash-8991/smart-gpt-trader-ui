@@ -7,5 +7,4 @@ beautifulsoup4
 requests
 lxmlOpenpyxl
 Selenium
-Re
 Subprocess

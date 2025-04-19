@@ -3,24 +3,26 @@ import pandas as pd
 import subprocess
 import os
 
-st.set_page_config(page_title="Trading Analysis", layout="wide")
-st.title("📈 Smart GPT Traders - Trade Analysis")
+st.title("📈 Trade Analysis")
 
-st.markdown("Click the button below to run trading logic and view the output:")
-
+# Run the trade.py file when button is clicked
 if st.button("Run Trade Analysis"):
-    with st.spinner("Running trade logic..."):
-        try:
-            # Execute trade.py instead of a notebook
-            subprocess.run(["python", "trade.py"], check=True)
+    try:
+        # Run the script
+        result = subprocess.run(
+            ["python", "trade.py"],
+            check=True,
+            capture_output=True,
+            text=True
+        )
+        st.success("Trade analysis completed successfully.")
 
-            if os.path.exists("output.xlsx"):
-                df = pd.read_excel("output.xlsx")
-                st.success("✅ Trade analysis complete. Here's the result:")
-                st.dataframe(df, use_container_width=True)
-            else:
-                st.error("❌ output.xlsx not found. Please ensure trade.py generates it.")
-        except subprocess.CalledProcessError as e:
-            st.error(f"Script execution failed with return code {e.returncode}")
-        except Exception as e:
-            st.error(f"Execution error: {e}")
+        # Check if output.xlsx was created
+        if os.path.exists("output.xlsx"):
+            df = pd.read_excel("output.xlsx")
+            st.dataframe(df)
+        else:
+            st.error("❌ output.xlsx not found. Please ensure trade.py generates it.")
+
+    except subprocess.CalledProcessError as e:
+        st.error(f"🚨 Error running trade.py:\n{e.stderr}")

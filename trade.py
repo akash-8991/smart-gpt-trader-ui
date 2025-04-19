@@ -2,7 +2,7 @@
  "cells": [
   {
    "cell_type": "code",
-   "execution_count": 2,
+   "execution_count": 1,
    "id": "ff17b18f-9104-4ea5-a756-996589c11d49",
    "metadata": {},
    "outputs": [],
@@ -28,7 +28,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 3,
+   "execution_count": 2,
    "id": "ff886317-f7e7-4b3c-91c3-985b84081089",
    "metadata": {},
    "outputs": [],
@@ -39,7 +39,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 4,
+   "execution_count": 3,
    "id": "6c21aba4-d512-4500-b2bd-cae9d7f0a8f1",
    "metadata": {},
    "outputs": [],
@@ -53,7 +53,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 5,
+   "execution_count": 4,
    "id": "386ef5c1-f9a0-478f-84dc-fc64fcf9b732",
    "metadata": {},
    "outputs": [],
@@ -102,7 +102,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 6,
+   "execution_count": 5,
    "id": "6efed1ac-39c3-41cd-8425-c7a5489086ab",
    "metadata": {},
    "outputs": [],
@@ -150,7 +150,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 7,
+   "execution_count": 6,
    "id": "1f73449b-d8cd-4ce2-bd6e-20ed9844567a",
    "metadata": {},
    "outputs": [],
@@ -170,7 +170,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 8,
+   "execution_count": 7,
    "id": "059ae3b5-9293-44da-bdc6-7c6e4544a71c",
    "metadata": {},
    "outputs": [],
@@ -185,7 +185,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 9,
+   "execution_count": 8,
    "id": "1ae32c53-a1ed-43a6-90ea-cd43ebddbb63",
    "metadata": {},
    "outputs": [],
@@ -248,7 +248,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 10,
+   "execution_count": 9,
    "id": "bb64f2a9-dca5-464d-be28-5610d6965172",
    "metadata": {},
    "outputs": [],
@@ -277,7 +277,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 11,
+   "execution_count": 10,
    "id": "7e1b1f32-14b0-4c53-97e1-5297de8de66d",
    "metadata": {},
    "outputs": [],
@@ -293,7 +293,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 12,
+   "execution_count": 11,
    "id": "07d2db5b-ae95-441f-bf00-2a62ec0263ba",
    "metadata": {},
    "outputs": [
@@ -308,8 +308,7 @@
      "name": "stderr",
      "output_type": "stream",
      "text": [
-      "[*********************100%***********************]  1 of 1 completed\n",
-      "[*********************100%***********************]  1 of 1 completed"
+      "[*********************100%***********************]  1 of 1 completed\n"
      ]
     },
     {
@@ -323,7 +322,7 @@
      "name": "stderr",
      "output_type": "stream",
      "text": [
-      "\n"
+      "[*********************100%***********************]  1 of 1 completed\n"
      ]
     }
    ],
@@ -351,7 +350,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 13,
+   "execution_count": 12,
    "id": "10a32448-d1c4-4095-8708-b5d6db5f33b7",
    "metadata": {},
    "outputs": [
@@ -359,7 +358,7 @@
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "✅ Analysis saved to SmartGPT_Stock_Analysis_Output.xlsx\n"
+      "✅ Analysis saved to trade_output.xlsx\n"
      ]
     }
    ],
@@ -372,7 +371,7 @@
     "])\n",
     "output.to_excel(\"trade_output.xlsx\", index=False)\n",
     "\n",
-    "print(\"✅ Analysis saved to \"trade_output.xlsx\")\n",
+    "print(\"✅ Analysis saved to trade_output.xlsx\")\n",
     "driver.quit()"
    ]
   }

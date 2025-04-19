@@ -1,34 +1,28 @@
 import streamlit as st
-import subprocess
-import os
 import pandas as pd
+import papermill as pm
+import os
 
-st.set_page_config(page_title="Smart GPT Traders - Trade Analysis", layout="wide")
-st.title("📊 Trading Analysis")
+st.set_page_config(page_title="Trading Analysis", layout="wide")
+st.title("📈 Smart GPT Traders - Trade Analysis")
 
-st.markdown("Click the button below to run the trade logic and get today’s trading opportunities.")
+st.markdown("Click the button below to run trading logic and view the output:")
 
-if st.button("Run Today's Trade Analysis"):
-    with st.spinner("Running trading logic from trade.ipynb..."):
+if st.button("Run Trade Analysis"):
+    with st.spinner("Executing trade notebook..."):
         try:
-            # Execute the notebook and output to new notebook (output will still be saved as output.xlsx)
-            subprocess.run([
-                "jupyter", "nbconvert", "--to", "notebook", 
-                "--execute", "trade.ipynb", 
-                "--output", "trade_output.ipynb"
-            ], check=True)
+            # Run the notebook
+            pm.execute_notebook(
+                input_path='trade.ipynb',
+                output_path='trade_output.ipynb'
+            )
 
-            # Check for Excel file
+            # Load the output Excel file
             if os.path.exists("output.xlsx"):
                 df = pd.read_excel("output.xlsx")
-                st.success("✅ Trade analysis completed successfully!")
+                st.success("✅ Trade analysis complete. Here's the result:")
                 st.dataframe(df, use_container_width=True)
             else:
-                st.error("❌ output.xlsx not found. Please ensure trade.ipynb creates the file.")
-
-        except subprocess.CalledProcessError as e:
-            st.error("⚠️ Error while executing trade.ipynb")
-            st.exception(e)
-
-# Optional: debug
-# st.write("Files in current directory:", os.listdir("."))
+                st.error("❌ output.xlsx not found. Please ensure the notebook generates the Excel output.")
+        except Exception as e:
+            st.error(f"Execution error: {e}")

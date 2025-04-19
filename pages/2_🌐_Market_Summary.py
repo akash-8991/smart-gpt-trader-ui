@@ -17,8 +17,8 @@ def get_market_summary():
     for name, ticker in tickers.items():
         df = yf.download(ticker, period="2d", progress=False)
         if len(df) >= 2:
-            open_price = df['Open'][-1]
-            close_price = df['Close'][-2]
+            open_price = float(df['Open'].iloc[-1])
+            close_price = float(df['Close'].iloc[-2])
             pct_change = ((open_price - close_price) / close_price) * 100
             data.append([name, round(open_price, 2), round(close_price, 2), f"{pct_change:.2f}%"])
     return pd.DataFrame(data, columns=["Index", "Open", "Previous Close", "% Change"])

@@ -14,7 +14,8 @@ if st.button("Run Trade Analysis"):
             # Run the notebook
             pm.execute_notebook(
                 input_path='trade.ipynb',
-                output_path='trade_output.ipynb'
+                output_path='trade_output.ipynb',
+                kernel_name='python3'
             )
 
             # Load the output Excel file

@@ -357,6 +357,8 @@
    "outputs": [],
    "source": [
     "# Save to Excel\n",
+    "import os\n",
+    "print(\"Working directory:\", os.getcwd())\n",
     "output = pd.DataFrame(stock_data, columns=[\n",
     "    'Symbol', 'CMP', 'RSI', 'MACD Signal', 'DMA',\n",
     "    'Analyst Rating', 'Target Price', 'News Sentiment',\n",
@@ -364,7 +366,7 @@
     "])\n",
     "output.to_excel(\"output.xlsx\", index=False)\n",
     "\n",
-    "#print(\"✅ Analysis saved to trade_output.xlsx\")\n",
+    "print(\"✅ Analysis saved to trade_output.xlsx\")\n",
     "#driver.quit()"
    ]
   }

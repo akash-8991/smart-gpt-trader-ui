@@ -354,19 +354,28 @@
    "execution_count": 13,
    "id": "10a32448-d1c4-4095-8708-b5d6db5f33b7",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "✅ Analysis saved to trade_output.xlsx\n"
+     ]
+    }
+   ],
    "source": [
     "# Save to Excel\n",
-    "import os\n",
-    "print(\"Working directory:\", os.getcwd())\n",
     "output = pd.DataFrame(stock_data, columns=[\n",
     "    'Symbol', 'CMP', 'RSI', 'MACD Signal', 'DMA',\n",
     "    'Analyst Rating', 'Target Price', 'News Sentiment',\n",
     "    'Recommendation', 'Entry Price', 'Target', 'Stop Loss'\n",
     "])\n",
-    "output.to_excel(\"output.xlsx\", index=False)\n",
     "\n",
-    "print(\"✅ Analysis saved to trade_output.xlsx\")\n",
+    "import os\n",
+    "print(\"Saving to:\", os.getcwd())  # For debugging\n",
+    "output.to_excel(os.path.join(os.getcwd(), \"output.xlsx\"), index=False)\n",
+    "\n",
+    "print(\"✅ Analysis saved to output.xlsx\")\n",
     "#driver.quit()"
    ]
   }

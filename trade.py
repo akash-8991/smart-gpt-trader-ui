@@ -34,7 +34,7 @@
    "outputs": [],
    "source": [
     "# User-defined symbols (e.g. top NIFTY 50 stocks + BANKNIFTY)\n",
-    "symbols = [\"RELIANCE\", \"WIPRO\"]"
+    "symbols = [\"RELIANCE\", \"INFY\"]"
    ]
   },
   {
@@ -196,8 +196,8 @@
     "        slug_map = {\n",
     "            'RELIANCE': 'reliance-industries-ltd',\n",
     "            #'TCS': 'tata-consultancy-services-ltd',\n",
-    "            #'INFY': 'infosys-ltd',\n",
-    "            'WIPRO': 'wipro-ltd',\n",
+    "            'INFY': 'infosys-ltd',\n",
+    "            #'WIPRO': 'wipro-ltd',\n",
     "            #'HDFCBANK': 'hdfc-bank-ltd',\n",
     "            # Add more mappings as needed\n",
     "        }\n",

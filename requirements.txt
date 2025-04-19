@@ -8,3 +8,4 @@ requests
 lxmlOpenpyxl
 Selenium
 Papermill
+Os

@@ -308,7 +308,8 @@
      "name": "stderr",
      "output_type": "stream",
      "text": [
-      "[*********************100%***********************]  1 of 1 completed\n"
+      "[*********************100%***********************]  1 of 1 completed\n",
+      "[*********************100%***********************]  1 of 1 completed"
      ]
     },
     {
@@ -322,7 +323,14 @@
      "name": "stderr",
      "output_type": "stream",
      "text": [
-      "[*********************100%***********************]  1 of 1 completed\n"
+      "\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "✅ Output saved to output.xlsx\n"
      ]
     }
    ],
@@ -345,25 +353,8 @@
     "        symbol, signals['cmp'], signals['RSI'], signals['MACD'], signals['DMA'],\n",
     "        rating, target, news_sentiment,\n",
     "        reco, signals['cmp'], target, sl\n",
-    "    ])"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 12,
-   "id": "10a32448-d1c4-4095-8708-b5d6db5f33b7",
-   "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "Saving to: /Users/akash/Desktop/smart_gpt_trader_app\n",
-      "✅ Analysis saved to output.xlsx\n"
-     ]
-    }
-   ],
-   "source": [
+    "    ])\n",
+    "\n",
     "# Save to Excel\n",
     "output = pd.DataFrame(stock_data, columns=[\n",
     "    'Symbol', 'CMP', 'RSI', 'MACD Signal', 'DMA',\n",
@@ -371,11 +362,10 @@
     "    'Recommendation', 'Entry Price', 'Target', 'Stop Loss'\n",
     "])\n",
     "\n",
-    "import os\n",
-    "print(\"Saving to:\", os.getcwd())  # For debugging\n",
-    "output.to_excel(os.path.join(os.getcwd(), \"output.xlsx\"), index=False)\n",
+    "output_file = \"output.xlsx\"\n",
+    "output.to_excel(output_file, index=False)\n",
+    "print(f\"✅ Output saved to {output_file}\")\n",
     "\n",
-    "print(\"✅ Analysis saved to output.xlsx\")\n",
     "#driver.quit()"
    ]
   }

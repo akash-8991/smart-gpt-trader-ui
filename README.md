@@ -4,7 +4,7 @@
 This app has 3 pages:
 1. **Login Page** - Enter a unique login ID
 2. **Market Summary Page** - View Indian, global indices and commodities
-3. **Trading Analysis Page** - Run external trading logic from `trade.ipynb` and display the output Excel as a table.
+3. **Trading Analysis Page** - Run external trading logic from `trade.py` and display the output Excel as a table.
 
 ## How to Run
 ```bash

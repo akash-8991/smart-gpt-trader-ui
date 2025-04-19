@@ -18,4 +18,4 @@ streamlit run app.py
 - openpyxl
 - Jupyter
 
-Make sure `trade.ipynb` exists and generates `trade_output.xlsx`.
+Make sure `trade.py` exists and generates `output.xlsx`.

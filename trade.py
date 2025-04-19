@@ -353,15 +353,7 @@
    "execution_count": 12,
    "id": "10a32448-d1c4-4095-8708-b5d6db5f33b7",
    "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "✅ Analysis saved to trade_output.xlsx\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "# Save to Excel\n",
     "output = pd.DataFrame(stock_data, columns=[\n",
@@ -371,8 +363,8 @@
     "])\n",
     "output.to_excel(\"trade_output.xlsx\", index=False)\n",
     "\n",
-    "print(\"✅ Analysis saved to trade_output.xlsx\")\n",
-    "driver.quit()"
+    "#print(\"✅ Analysis saved to trade_output.xlsx\")\n",
+    "#driver.quit()"
    ]
   }
  ],

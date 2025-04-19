@@ -23,7 +23,8 @@
     "import requests\n",
     "import re\n",
     "import time\n",
-    "import subprocess"
+    "import subprocess\n",
+    "import os"
    ]
   },
   {
@@ -316,7 +317,7 @@
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "Processing WIPRO...\n"
+      "Processing INFY...\n"
      ]
     },
     {
@@ -362,9 +363,21 @@
     "    'Recommendation', 'Entry Price', 'Target', 'Stop Loss'\n",
     "])\n",
     "\n",
-    "output_file = \"output.xlsx\"\n",
-    "output.to_excel(output_file, index=False)\n",
-    "print(f\"✅ Output saved to {output_file}\")\n",
+    "base_dir = os.path.dirname(os.path.abspath(__file__))\n",
+    "\n",
+    "# Step 2: Define the full path to output.xlsx in the root of your repo\n",
+    "output_path = os.path.join(base_dir, \"output.xlsx\")\n",
+    "\n",
+    "# Step 3: Save the Excel file\n",
+    "try:\n",
+    "    output.to_excel(output_path, index=False)\n",
+    "    print(f\"[✅] output.xlsx successfully saved at: {output_path}\")\n",
+    "except Exception as e:\n",
+    "    print(f\"[❌] Error saving output.xlsx: {e}\")\n",
+    "    \n",
+    "#output_file = \"output.xlsx\"\n",
+    "#output.to_excel(output_file, index=False)\n",
+    "#print(f\"✅ Output saved to {output_file}\")\n",
     "\n",
     "#driver.quit()"
    ]
